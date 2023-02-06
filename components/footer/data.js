@@ -1,4 +1,4 @@
-export default [
+const data= [
   {
     id: 1,
     sender: `پێداویستیەکانی دەرهێنانی پاسپۆرت بۆ جاری یەکەم:  `,
@@ -25,3 +25,4 @@ export default [
     starred: true
   }
 ];
+export default data;
