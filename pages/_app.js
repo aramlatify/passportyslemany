@@ -7,20 +7,17 @@ import createEmotionCache from '../utility/createEmotionCache';
 import lightTheme from '../styles/theme/lightTheme';
 import '../styles/globals.css';
 import '../styles/globals.scss';
-import rtl from "jss-rtl";
-import { create } from "jss";
-import { StylesProvider, jssPreset } from "@mui/styles";
+
 
 
 const clientSideEmotionCache = createEmotionCache();
 
 const MyApp = (props) => {
-  
-  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+ 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
  
   return (
-    <StylesProvider jss={jss}>
+   
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={lightTheme}>
         <CssBaseline />
@@ -29,7 +26,7 @@ const MyApp = (props) => {
       
       </ThemeProvider>
     </CacheProvider>
-    </StylesProvider>
+  
   );
 };
 
