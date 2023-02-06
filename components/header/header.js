@@ -32,7 +32,7 @@ function App() {
           width={"60"}
           placeholder="blur"
           layout="fill"
-        
+        alt="logo"
 
         
           
@@ -54,7 +54,7 @@ function App() {
          
           placeholder="blur"
           blurDataURL
-        
+        alt="description of image"
           
         />
       </div>
