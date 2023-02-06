@@ -5,10 +5,10 @@ const ButtonTile = (handleClick) => (
   <>
   <div>
   <button type="button" onClick={handleClick} class="btn">
-    <span class="circle">
-      <span class="icon arrow"></span>
+    <span className="circle">
+      <span className="icon arrow"></span>
     </span>
-    <span class="button-text"> سڕینەوە</span>
+    <span className="button-text"> سڕینەوە</span>
   </button>
   </div>
   </>
