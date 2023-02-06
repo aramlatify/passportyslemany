@@ -84,6 +84,7 @@ export default function MultiSelect({
             renderTags={(value, getTagProps) =>
               value.map((items, index) => (
                 <Chip
+                 key={index}
                   sx={{
                     height: 24,
                     position: "relative",
