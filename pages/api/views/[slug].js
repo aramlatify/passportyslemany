@@ -1,5 +1,5 @@
 import { supabase } from "../../../utility/supabase";
-export default async (req, res) => {
+const handler = async (req, res) => {
     if (req.method === 'POST') {
         // Call our stored procedure with the page_slug set by the request params slug
         await supabase.rpc('increment_page_view', { page_slug: req.query.slug });
@@ -24,3 +24,4 @@ export default async (req, res) => {
         message: 'Unsupported Request'
       });
     };
+    export default handler;
