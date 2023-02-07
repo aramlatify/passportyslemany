@@ -33,7 +33,7 @@ export default function App() {
       >
         <div>
           {emails.map((email,id) => (
-            <span className={`email`}  >
+            <span key={id} className={`email`}  >
               <span 
                
                 
