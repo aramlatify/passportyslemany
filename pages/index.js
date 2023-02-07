@@ -14,7 +14,7 @@ import ButtonTile from "../components/table/Button/ButtonTile";
 
 import * as Border1 from "../components/table/border1";
 
-import  { css } from "styled-components";
+
 
 
 import Search from "../components/table/autocomplete";
@@ -28,95 +28,12 @@ import Header from '../components/header/header'
 
 import View from '../components/weblayout'
 
-
-
-
 import styled from "styled-components";
 
-const LinearGradientBackground = css`
-  background: linear-gradient(225deg, "#ffbbff, #060c21, #00bcd4");
-`;
-
-const LinearGradientPosition = css`
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-`;
 
 
 
-
-
-
-const colors = {
-  dark0: "#14142C",
-  dark1: "#202037",
-  accent0: "#00FFEA",
-  accent1: "#029AAF",
-  accent2: "#083A7C",
-  accent3: "#F4084F",
-  light0: "#ffffff",
-};
-export const Date = styled.p`
-  font-weight: 1000;
-  font-size: 1rem;
-  text-align: center;
-  margin-block-start: 0.5em;
-margin-block-end: 0em;
-  color: ${colors.light0};
-  @media  only screen and (min-width:368px) and (max-width:990px) {
-    font-weight: 500;
-    margin-block-start: 0.1em;
-  }
-`;
-export const ContainerDate = styled.div`
-padding-right:20px;
-  padding-left:20px;
-  align-items: center;
-  
-  flex-direction: column;
-  width: 100%;
-  
-  height: 65px;
-  
- 
-  border-radius: 36px;
-    
-  border-left: 2px solid ${colors.accent0};
-  border-right: 2px solid ${colors.accent0};
- 
-`;
- cons BlockWrapper1 = styled.div`
-
-
-padding: -2px 0 6px;
-background: rgba(255,255,255,0.05);
-
-
-width: 345px;
-
-
-
-border-radius: 38px;
-
-`;
-export const MainDate = styled.div`
-  display: flex;
-  flex-direction: row;
-  border-radius: 36px;
-  margin: 0 auto;
-flex-grow:1;
-  position: relative;
-  max-width: 1400px;
-  background-color: ${colors.dark1};
-  ${BlockWrapper1}:nth-of-type() {
-    background: rgba(255, 255, 255, 0.05);
-  }
-  
-`;
- cons Wrapper = styled.section`
+const Wrapper = styled.section`
 
 padding: 12px;
 
