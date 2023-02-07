@@ -1,0 +1,4 @@
+﻿@font-face{
+    font-family:conv_xendan-light;src:url(fonts/Xendan-Light.eot);src:local('☺'),url(fonts/Xendan-Light.woff) format('woff'),url(fonts/Xendan-Light.ttf) format('truetype'),url(fonts/Xendan-Light.svg) format('svg');font-weight:400;font-style:normal}
+    @font-face{font-family:conv_xendan-regular;src:url(fonts/Xendan-Regular.eot);src:local('☺'),url(fonts/Xendan-Regular.woff) format('woff'),url(fonts/Xendan-Regular.ttf) format('truetype'),url(fonts/Xendan-Regular.svg) format('svg');font-weight:400;font-style:normal}
+    @font-face{font-family:conv_xendan-bold;src:url(fonts/Xendan-Bold.eot);src:local('☺'),url(fonts/Xendan-Bold.woff) format('woff'),url(fonts/Xendan-Bold.ttf) format('truetype'),url(fonts/Xendan-Bold.svg) format('svg');font-weight:400;font-style:normal}

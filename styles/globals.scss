@@ -1,0 +1,100 @@
+.html,
+.body {
+  background-color: papayawhip;
+  font-family: sans-serif;
+}
+
+
+/* Corporative colors */
+$clrPrimary: rgb(0, 56, 93);
+$clrSecondary: rgb(0, 220, 145);
+$clrTertiary: rgb(240, 60, 135);
+
+/* auxiliary */
+$clrBlack: rgb(0, 0, 0);
+$clrWhite: rgb(255, 255, 255);
+
+/* other colors */
+$clrTurtle: rgb(115, 80, 205);
+$clrCat: rgb(255, 85, 75);
+$clrDog: rgb(0, 198, 215);
+$clrLion: rgb(242, 184, 32);
+
+$breaking-height: 45px;
+$breaking-title-width: 1000px;
+$animation-function: linear;
+$animation-speed: 0.02s;
+
+.dsf-breaking {
+  
+  position: sticky;
+  height: $breaking-height;
+  background-color: $clrPrimary;
+  display: flex;
+  align-items: flex-start;
+  padding: 9px 5px 1px;
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow: hidden;
+  z-index: 10;
+
+  &__title {
+    height: $breaking-height;
+    position: absolute;
+    right: 0;
+    padding: 0 15px;
+    background-color: $clrPrimary;
+    color: $clrWhite;
+    font-size: 22px;
+    line-height: 1;
+    z-index: 1;
+
+    &:before {
+      
+      content: '';
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: 0;
+      width: 2px;
+      height: $breaking-height * 0.6;
+      transform: translate3d(0, -50%, 0);
+      margin: 0 5px;
+      background: $clrWhite;
+    }
+
+    &:after {
+      
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: -5px;
+      width: 10px;
+      height: $breaking-height * 0.6;
+      background: linear-gradient(to right, $clrPrimary 0%, transparent 100%);
+    }
+  }
+
+  &__text {
+    animation-direction: reverse;
+    position: absolute;
+    left: 100%;
+    white-space: nowrap;
+    color: $clrWhite;
+    font-size: 20px;
+    line-height: 1.1;
+    animation-name: textRotating;
+    animation-duration: var(--animation-duration);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes textRotating {
+  100% {
+    
+    transform: translateX(-100%);
+    transform: translateX(calc(var(--wrapper-width, 0) * -1 - 100%));
+  }
+}

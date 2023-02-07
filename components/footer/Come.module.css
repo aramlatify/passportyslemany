@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+
+
+
+.email .star-checkbox {
+  appearance: none;
+ 
+  
+}
+
+.title {
+  
+ 
+  top: -3px;
+  
+  
+}
+
+.email .star-checkbox:checked::before,
+.email .star-checkbox::before {
+  content: "";
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: -2px;
+  
+ 
+}
+
+
+
+
+.email .star-checkbox:checked::before {
+  background-image: url(https://www.gstatic.com/images/icons/material/system/2x/star_googyellow500_20dp.png);
+}
+
