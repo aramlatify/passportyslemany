@@ -1,5 +1,5 @@
 import { useEffect,useRef } from 'react';
-import PageViews from './PageViews';
+import PageViews from './pageViews';
 import * as Layout from "./layout";
 import * as Styled from "./seen.style";
 const BlogLayout = ({ slug }) => {
