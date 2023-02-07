@@ -88,7 +88,7 @@ padding-right:20px;
   border-right: 2px solid ${colors.accent0};
  
 `;
-export cons BlockWrapper1 = styled.div`
+ cons BlockWrapper1 = styled.div`
 
 
 padding: -2px 0 6px;
@@ -116,7 +116,7 @@ flex-grow:1;
   }
   
 `;
-export cons Wrapper = styled.section`
+ cons Wrapper = styled.section`
 
 padding: 12px;
 
