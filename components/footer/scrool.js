@@ -33,13 +33,13 @@ export default function App() {
       >
         <div>
           {emails.map((email,id) => (
-            <span className={`email`}>
+            <span className={`email`}  >
               <span 
-               className=""
+               
                 
               >
                 <input
-                 key={id}
+                key={id}
                 style={{ paddingLeft: 30, paddingRight: 0 }}
                 className="star-checkbox"
                   type="checkbox"
@@ -48,7 +48,8 @@ export default function App() {
                 {email.sender}
               </span>
               <span
-                className=""
+               key={id}
+                
                 style={{ paddingLeft: 5, paddingRight: 0 }}
               >
                 {email.title}
