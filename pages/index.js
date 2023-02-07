@@ -26,7 +26,7 @@ import supabase from "../utils/supabase";
 import Footer from '../components/footer/footer'
 import Header from '../components/header/header'
 
-import View from '../components/seen/weblayout'
+import View from '../components/weblayout'
 
 
 
@@ -88,7 +88,7 @@ padding-right:20px;
   border-right: 2px solid ${colors.accent0};
  
 `;
-const BlockWrapper1 = styled.div`
+export cons BlockWrapper1 = styled.div`
 
 
 padding: -2px 0 6px;
@@ -116,7 +116,7 @@ flex-grow:1;
   }
   
 `;
-const Wrapper = styled.section`
+export cons Wrapper = styled.section`
 
 padding: 12px;
 
