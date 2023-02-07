@@ -26,7 +26,7 @@ import supabase from "../utils/supabase";
 import Footer from '../components/footer/footer'
 import Header from '../components/header/header'
 
-import View from '../components/weblayout'
+import View from '../components/seen'
 
 import styled from "styled-components";
 
