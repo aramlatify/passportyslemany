@@ -278,7 +278,7 @@ export const getStaticProps = async () => {
     props: {
       tabledata,
     },
-    revalidate: 86400,
+   
   };
  
 };
