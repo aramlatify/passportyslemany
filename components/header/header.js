@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from 'next/image'
 import styled, { keyframes } from "styled-components";
 
@@ -7,14 +7,7 @@ import BackgroundMountain from "../header/verdecita.png";
 
 
 function App() {
-  const [value, setValue] = useState();
-
-  const onChange = (e) => {
-    const { value } = e.target;
-    setValue(value);
-  };
-
-  console.log(value);
+  
 
   return (
     <>
@@ -43,10 +36,16 @@ function App() {
           </AppWrapper>
          
           <h1>
-            بەخێربێن بۆ پەرەی فەرمی <br /> ىەڕێوەبەرایەتی <span>پاسپۆرتی </span>{" "}
+            بەخێربێن بۆ پەرەی فەرمی <br /> بەڕێوەبەرایەتی <span>پاسپۆرتی </span>{" "}
             سلێمانی
           </h1>
+          <TextContainer>
+       
+       ناوی ئەو هاوڵاتیانەی پاسپۆرتەکانیان تەواو بووە لە هەر یەک لە فەرمانگەکانی  {" "}
+      <br /> <span>پاسپۆرتی ( سلێمانی و هەڵەبجە و کەلار و ڕانیە و چەمچەماڵ )</span> <br />{" "}
+      
 
+  </TextContainer>
           <div className="img-container">
         <Image
           src={BackgroundMountain}
@@ -58,13 +57,7 @@ function App() {
           
         />
       </div>
-          <TextContainer>
-            <div>
-               ناوی ئەو هاوڵاتیانەی پاسپۆرتەکانیان تەواو بووە لە هەر یەلە لە فەرمانگەکانی پاسپۆرتی {" "}
-              <br /> <span>( سلێمانی و کەلار و ڕانیەو چەمچەماڵ)</span> <br />{" "}
-              
-            </div>
-          </TextContainer>
+          
         </Header>
         </div>
       
@@ -106,28 +99,22 @@ const AppWrapper = styled(ReactLogo)`
   margin-left: 15px;
   left: 0;
   }
-  @media (max-width: 780px) {
-    
-    
-    margin-top: 3px;
-    
- 
-  margin-left: 14px;
-  left: 0;
+  @media (max-width: 850px) {
+    display: none;
   }
 `;
 
 const TextContainer = styled.div`
-
-margin-right: 0px;
+position: absolute;
+margin-right: 480px;
 margin-left: 0px;
-  margin-top: 10px;
+  margin-top: 80px;
   color: white;
   font-weight: 900;
   font-size: 1.5rem;
   text-align: center;
   line-height: 1.5em;
-  transform: translate(0%, -260%);
+  
   span {
     color: orange;
   }
@@ -169,7 +156,7 @@ const Header = styled.header`
     font-size: 2rem;
     text-align: right;
     line-height: 1.5em;
-    transform: translate(-5%, 20%);
+    transform: translate(-10%, 20%);
     span {
       color: orange;
     }
@@ -185,56 +172,15 @@ const Header = styled.header`
     @media (max-width: 480px) {
       font-size: 1.0rem;
     
-    line-height: 1.7em;
-    transform: translate(-10%, 0%);
+      line-height: 1.7em;
+      transform: translate(-50%, -10%);
     }
   }
   
 `;
-const ImageContainer2 = styled.div`
-position: absolute;
-width: 90rem;
-height: 7rem;
-top: 5%;
-left: 0;
-z-index: -2;
-display: block;
-margin-block-start: 0em;
-margin-block-end: 0em;
-margin-inline-start: 10px;
-margin-inline-end: 0px;
-`
-const StyledImage = styled(Image)`
 
-object-fit: fill;
-}
-@media (max-width: 1450px) {
 
-}
-@media (max-width: 980px) {
-  width: 98%;
-  height: 100%;
-  top: 5%;
-  left: 0;
-  z-index: -2;
-  display: block;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 5px;
-  margin-inline-end: 0px;
-  img {
-    
-    width: 101%;
-  height: 100%;
-  object-fit: fill;
-  }
-}
-}
-`;
 
 export default App;
 
-// <= 600px celulares
-// <= 900px tabletas
-// <= 1280px laps
-// <= 1920px laps o pc de escritorio con full HD
+
