@@ -12,5 +12,4 @@ const PageViews = ({ slug }) => {
     return <>{data?.total ? `${data.total} ` : `–––`}</>;
 
 };
-
 export default PageViews;
