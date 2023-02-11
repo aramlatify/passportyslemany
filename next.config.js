@@ -12,7 +12,7 @@ module.exports = { future: {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  reactStrictMode: true,
+  reactStrictMode: false,
   compiler: {
     styledComponents: true,}, webpack: (config) => {
       config.module.rules.push({
