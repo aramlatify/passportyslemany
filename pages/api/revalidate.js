@@ -4,7 +4,7 @@ const handler = async (req, res) => {
   }
 
   try {
-    await res.revalidate("/index.js");
+    await res.revalidate("/index");
 
   const pathToRevalidate = `/${
     req.body?.record?.id || req.body?.old_record?.id
