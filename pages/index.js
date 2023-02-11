@@ -1,7 +1,6 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useState,  useReducer,useRef } from "react";
 import Barwar from "../components/barwar/barwar";
 import dynamic from 'next/dynamic';
-
 // add this
 const DataTableDynamic = dynamic(
     async () => (await import('../components/table/muidatatable')),
@@ -9,27 +8,21 @@ const DataTableDynamic = dynamic(
 );
 import Head from 'next/head'
 import { useTheme, Grid, useMediaQuery, Hidden } from "@mui/material";
-
 import ButtonTile from "../components/table/Button/ButtonTile";
-
 import * as Border1 from "../components/table/border1";
-
-
-
-
 import Search from "../components/table/autocomplete";
-
 import AdvancedFilter from "../components/table/Textsearch";
-
 import supabase from "../utils/supabase";
-
 import Footer from '../components/footer/footer'
 import Header from '../components/header/header'
-
 import View from '../components/seen'
-
 import styled from "styled-components";
+import TimeAgo from "javascript-time-ago";
+import Tebiny from '../components/table/tebiny'
 
+import ar from "../utils/ku.json";
+import B from './api/data'
+TimeAgo.addDefaultLocale(ar);
 
 
 
@@ -57,6 +50,9 @@ const aram = [
     Location: "پاسپۆرتی سلێمانی"
   },
   {
+    Location: "پاسپۆرتی هەڵەبجە"
+  },
+  {
     Location: "پاسپۆرتی کەلار"
   },
   {
@@ -70,53 +66,7 @@ const aram = [
 
 
 
-const Datatable = ({ tabledata }) => {
-
-
-  const columns = [
-    {
-      field: "Fullname",
-      headerName: "ناوی سیانی",
-      width: 130,
-      renderCell: (cellValues) => {
-        return (
-          <div
-            style={{
-              color: "blue",
-              fontSize: 18,
-              width: "100%",
-              textAlign: "right"
-            }}
-          >
-            {cellValues.value}
-          </div>
-        );
-      }
-    },
-    { field: "Shurename", headerName: "لەقەب", width: 130 },
-    {
-      field: "Mothername",
-      headerName: "ناوی دایک",
-      headerAlign: "left"
-    },
-    {
-      field: "Location",
-      headerName: "شوێن ",
-      headerAlign: "left"
-    }
-  ];
-
-
- 
-  const [pageSize, setPageSize] = React.useState(5);
-
-
-
-  
-  
-  
-  
-
+const Datatable = ({error,  tabledata }) => {
 
   const [filterInput, setFilterInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
@@ -131,9 +81,24 @@ const Datatable = ({ tabledata }) => {
     setFilterInput({ [name]: value });
   };
 
-  const [dataList, setDataList] = React.useState(tabledata);
+  const [dataList, setDataList] = useState(tabledata);
+  const dataFetchedRef = useRef(false);
+  const fetchData = () => {
+   
+    if (!tabledata) {
+      setDataList(B);
+    }else{
+      setDataList(tabledata);
+    }
+}
+  useEffect(() => {
+    if (dataFetchedRef.current) return;
+    dataFetchedRef.current = true;
+    fetchData();
+   
+  }, [error, tabledata]);
   
-  const [termIdFilter, setTermIdFilter] = React.useState([]);
+  const [termIdFilter, setTermIdFilter] = useState([]);
 
   const applyFilters = (newInputValue) => {
     const filters = {
@@ -161,9 +126,9 @@ const Datatable = ({ tabledata }) => {
   };
   
  
-  const handleClick = () => {
-    setFilterInput({ Fullname: "", Shurename: "", Mothername: "" })
-  };
+ 
+
+
   const filterCountries = (dataList) => {
     return dataList.filter((item) => {
       return (
@@ -188,7 +153,11 @@ const Datatable = ({ tabledata }) => {
 
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
 
-
+  const handleClick = () => {
+    setFilterInput({ Fullname: "", Shurename: "", Mothername: "" })
+    setTermIdFilter([]);
+    applyFilters({ Location: '' });
+  };
 
 
   return (
@@ -203,7 +172,24 @@ const Datatable = ({ tabledata }) => {
       <main >
         
    
-      <View/>
+      <Grid  container   style={{paddingTop: 10 , display: "flex", flexDirection: mdUp ? "" : "column" }}>
+      <Grid  item xs={12} sm={12} md={9} lg={9} style={{ paddingTop: 0 ,paddingRight:70}}>
+    
+    <Tebiny/>
+           
+         
+        </Grid>
+        <Hidden only={['xs','sm']}> 
+        <Grid item xs={12} sm={12} md={3} lg={3} style={{ paddingTop: 10 }}>
+   
+        <View/>
+ </Grid>
+ </Hidden > 
+        </Grid>
+      <Grid style={{ paddingBottom: 15 ,
+    paddingLeft: 10}}>
+      </Grid>
+      
       <Grid  container   style={{ display: "flex", flexDirection: mdUp ? "" : "column" }}>
       
       <Grid item xs={12} sm={12} md={9} lg={9} style={{ paddingTop: 15 ,paddingLeft: 10 , padding: 20}}>
@@ -244,18 +230,23 @@ const Datatable = ({ tabledata }) => {
         selectedOptions={termIdFilter}
         filterSelectedOptions
       />
-      <Grid item style={{ paddingTop: 10,paddingBottom:0,paddingRight:20 }}>
-            <ButtonTile handleClick={handleClick} >
-           
+      <Grid item style={{ paddingTop: 10,paddingBottom:30,paddingRight:20 }}>
+            <ButtonTile onClick={handleClick} >
             </ButtonTile>
             </Grid>
           </Grid>
           </Wrapper>
   </Border1.Borderli>
       </Border1.Borderul>
+        
         </Grid>
-        </Grid>
-       <Barwar/>
+        <Grid item xs={12} sm={12} md={3} lg={3} style={{ paddingTop: 10 ,}}>
+   
+        <Barwar/>
+      </Grid>
+      
+      
+      </Grid>
       
    
       <DataTableDynamic  data={countriesList} />
@@ -272,10 +263,10 @@ const Datatable = ({ tabledata }) => {
 
 
 export const getStaticProps = async () => {
-  const { data: tabledata } = await supabase.from("nawakan").select("*");
-  
+  const { data: tabledata , error }  = await supabase.from("nawakan").select("*");
+
   return {
-    props: {
+    props: {error,
       tabledata,
     },
    
