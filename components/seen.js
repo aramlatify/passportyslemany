@@ -28,7 +28,7 @@ const BlogLayout = ({ slug }) => {
 
     return (
         <div>
-        <Styled.MainContainer>
+        
           <Styled.BlockWrapper>
       <Styled.Wrapper>
         <Layout.Row>
@@ -57,7 +57,7 @@ const BlogLayout = ({ slug }) => {
       </Styled.Wrapper>
     </Styled.BlockWrapper>
            
-    </Styled.MainContainer>
+  
         </div>
       );
     };
