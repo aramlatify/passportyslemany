@@ -13,7 +13,7 @@ export const Column = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: ${(props) => props.yAlign || "flex-start"};
-  align-items: ${(props) => props.xAlign || "flex-start"};
+  justify-content: ${(props) => props.yAlign || "center"};
+  align-items: ${(props) => props.xAlign || "center"};
   width: ${(props) => props.width || "100%"};
 `;
