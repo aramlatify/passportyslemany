@@ -7,7 +7,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/cache": "^11.7.1",
+   "@emotion/cache": "^11.7.1",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.10.5",
@@ -16,12 +16,14 @@
     "@mui/material": "^5.11.6",
     "@mui/x-data-grid": "^5.17.21",
     "@supabase/supabase-js": "^1.35.4",
+    "javascript-time-ago": "^2.5.9",
     "moment": "^2.24.0",
     "next": "12.2.0",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-query": "^3.39.2",
+    "react-time-ago": "^7.2.1",
     "sass": "^1.57.1",
     "styled-components": "^5.3.6",
     "stylis": "^4.1.3",
