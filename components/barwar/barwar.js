@@ -33,6 +33,8 @@ export const Date = styled.p`
   font-weight: 1000;
   font-size: 1rem;
   text-align: start;
+   margin-top: 5px;
+  padding-bottom: 10px;
   margin-block-start: 0em;
   span {
     color: orange;
@@ -242,7 +244,7 @@ const Barwar = ({slug}) => {
             </Styled1.Container>
           </Styled1.BlockWrapper>
           </Hidden>
-        <Grid >
+        <Grid style={{ paddingBottom:10}}>
 
         <Hidden mdUp>
 
