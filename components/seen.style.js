@@ -51,13 +51,15 @@ export const Stats = styled.div`
 `;
 
 export const Label = styled.span`
+
   font-size: 1.4rem;
   margin-bottom: 4px;
   color: ${colors.accent1};
 `;
 
 export const Data = styled.span`
-  font-size: 1.6rem;
+margin-left: 15px;
+  font-size: 1.4rem;
   color: "#ffffff";
 `;
 
