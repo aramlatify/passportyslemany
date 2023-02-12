@@ -36,28 +36,23 @@ const BlogLayout = ({ slug }) => {
         </Layout.Row>
         <Layout.Column>
           <Styled.Stats>
-            <Styled.Stat>
-              
-            <Styled.Label> </Styled.Label>
-            </Styled.Stat>
+            
             <Styled.Data> <Views slug={slug} /> </Styled.Data>
             <Styled.Stat>
             <Styled.Label>جار</Styled.Label>
              
              
             </Styled.Stat>
-            <Styled.Label>بینراوە</Styled.Label>
-           
-            <Styled.Stat>
+            <Styled.Stat><Styled.Label>بینراوە</Styled.Label>
+           </Styled.Stat>
             
-              
-            </Styled.Stat>
+            
           </Styled.Stats>
         </Layout.Column>
       </Styled.Wrapper>
     </Styled.BlockWrapper>
            
-  
+ 
         </div>
       );
     };
