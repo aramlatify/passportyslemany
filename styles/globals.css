@@ -287,3 +287,14 @@ button:hover .button-text {
   color: white;
   text-align: center;
 }
+.pagination {
+  padding: 5px 0 15px 0;
+  display: flex;
+  background-color: rgba(40,42,66);
+  justify-content: center;
+  
+}
+.Appselect {
+  font-family: sans-serif;
+  text-align: center;
+}
