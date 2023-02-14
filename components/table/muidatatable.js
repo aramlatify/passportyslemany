@@ -26,6 +26,7 @@ function DataTable({ data }) {
   
    const StyledTextField = styled(TextField)({
     "& .MuiInputLabel-root": {
+      color: "green",
       right: 0,
       textAlign: "center",
       fontSize: "1.2rem"
@@ -44,7 +45,19 @@ function DataTable({ data }) {
       "& legend ": {
         display: "none" // If you want it then you need to position it similar with above
       }
-    }
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'white',
+        "& legend ": {
+          display: "none" // If you want it then you need to position it similar with above
+        }
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      
+    },
   });
   
  
@@ -350,7 +363,7 @@ function DataTable({ data }) {
 
  label="ژمارەی ناوەکان لە یەک پەرەیە"
  
- autoFocus
+ 
  select
  value={rowsPerPage}
          
