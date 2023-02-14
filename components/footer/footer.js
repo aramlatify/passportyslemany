@@ -9,9 +9,9 @@ import Scrolfooter from './scrool'
  */
 export default function Demo() {
   return (
-    <Container maxWidth={false}  style={{ backgroundColor: "",position:'sticky',
+    <Container maxWidth={false} sx={{ zIndex: 1}}  style={{ backgroundColor: "",position:'sticky',
     paddingRight:'0',
-    zindex: 1,
+   
     bottom:'20px',
     paddingLeft:'0',marginLeft:'0',marginRight:'0'}}>
       <Grid container >
