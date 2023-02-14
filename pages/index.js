@@ -249,14 +249,13 @@ const Datatable = ({error,  tabledata }) => {
       </Grid>
       
    
+      <Grid item style={{ paddingBottom:22 }}>
       <DataTableDynamic  data={countriesList} />
-      
+      </Grid>
           
       </main>
      
-      <footer >
-       <Footer/>
-      </footer>
+      <Footer/>
     </div>
   )
 }
