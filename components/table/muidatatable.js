@@ -1,6 +1,8 @@
 import React, { useEffect, useState,useRef } from "react";
 
-import {
+import {FormControl,
+  
+  MenuItem,
   TableHead,
   Table,
   TableBody,
@@ -11,8 +13,9 @@ import {
   Paper,
   Box,
   Grid,
-  Typography
+  Typography, Hidden
 } from "@mui/material";
+import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 
@@ -20,6 +23,29 @@ import { tablePaginationClasses } from "@mui/material/TablePagination";
 import TableFooter from "@mui/material/TableFooter";
 
 function DataTable({ data }) {
+  
+   const StyledTextField = styled(TextField)({
+    "& .MuiInputLabel-root": {
+      right: 0,
+      textAlign: "center",
+      fontSize: "1.2rem"
+    },
+    "& .MuiInputLabel-shrink": {
+      margin: "0 auto",
+      position: "absolute",
+      right: "0",
+      left: "0",
+      top: "-3px",
+      width: "210px", // Need to give it a width so the positioning will work
+      background: "white" // Add a white bg
+      // display: "none" //if you want to hide it completly
+    },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+      "& legend ": {
+        display: "none" // If you want it then you need to position it similar with above
+      }
+    }
+  });
   
  
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -80,6 +106,7 @@ function DataTable({ data }) {
     }
   }));
 
+   const PAGE_OPTIONS = [5, 10, 20, 30, 40, 50, 100];
   const rowsPerPageOptions = [5, 10, 25, { label: "All", value: -1 }];
   const [page, setPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
@@ -236,6 +263,7 @@ function DataTable({ data }) {
         <TableBody>
         {currentItem.map(Nawakan)}
         </TableBody>
+        <Hidden only={['xs','sm','md']}> 
         <TableFooter>
           <TableRow sx={{}}>
             <TablePagination
@@ -274,16 +302,19 @@ function DataTable({ data }) {
               count={data.length}
               rowsPerPage={rowsPerPage}
               page={page - 1}
-              labelRowsPerPage={"ژمارەی دێڕەکان لە یەک پەرەیە"}
+              labelRowsPerPage={"ژمارەی ناەکان لە یەک پەرەیە"}
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
               ActionsComponent={TablePaginationActions}
               labelDisplayedRows={({ from, to, count }) =>
-                `پەڕەی ${from}-${to} لە ${count} پەڕەیە${count > 1 ? "" : ""}`
+                `ناوی ${from}-${to} لە ${count} ناوە${count > 1 ? "" : ""}`
               }
             />
           </TableRow>
+         
         </TableFooter>
+        </Hidden>
+        
       </Table>
       <td
         style={{
@@ -303,6 +334,49 @@ function DataTable({ data }) {
           </Grid>
         </Grid>
       </td>
+      <Hidden lgUp>
+      <div className="Appselect">
+      <FormControl fullWidth  style={{ background:  "#282A42" }}>
+      <StyledTextField
+ 
+ 
+ InputProps={{
+   inputProps: {
+     style: { textAlign: "center" }
+   }
+ }}
+ margin="normal"
+ fullWidth
+
+ label="ژمارەی ناوەکان لە یەک پەرەیە"
+ 
+ autoFocus
+ select
+ value={rowsPerPage}
+         
+          onChange={handleChangeRowsPerPage}
+
+ 
+>
+ 
+  {PAGE_OPTIONS?.map((data) => (
+       <MenuItem value={data}>{data}</MenuItem>
+     ))}
+      
+</StyledTextField>
+       
+      </FormControl>
+      </div>
+      <div className="pagination">
+        <Pagination
+       
+        page={page}
+        count={Math.ceil(data.length / rowsPerPage)}
+        onChange={handleChangePage}
+        variant="outlined"
+      />
+      </div>
+      </Hidden>
     </Paper>
   );
 }
