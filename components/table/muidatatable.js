@@ -335,7 +335,7 @@ function DataTable({ data }) {
           flexDirection: "column"
         }}
       >
-        <Grid container style={{ background:  "#282A42", padding: 5 }}>
+        <Grid container style={{ background:  "#282A42", padding: 5 ,paddingRight: 15}}>
           <Grid item align="Left">
             <Typography style={{ fontWeight: 600 }}>
               
