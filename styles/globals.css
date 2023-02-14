@@ -295,6 +295,8 @@ button:hover .button-text {
   
 }
 .Appselect {
-  font-family: sans-serif;
+  background-color: rgba(40,42,66);
   text-align: center;
+  padding-left: 10px;
+    padding-right: 10px;
 }
