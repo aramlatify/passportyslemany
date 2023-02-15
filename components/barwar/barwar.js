@@ -268,7 +268,7 @@ const Barwar = ({slug}) => {
             بەرواری نوێ کردنەوەی خشتەکە :
             </Typography>
           </Grid>
-          <Grid item align="Right" style={{color: "#00e5ff", margin: "0px 45.56px 0px auto" }}>
+          <Grid item align="Right" style={{color: "#00e5ff", margin: "0px 25.56px 0px auto" }}>
             <Typography style={{ fontWeight: 600 }}>{fetchError && <p>{fetchError}</p>}
       {smoothies && (
      
@@ -310,7 +310,7 @@ const Barwar = ({slug}) => {
           ژمارەی سەردانی کەرانی ماڵپەر :   
             </Typography>
           </Grid>
-          <Grid item align="Right" style={{color: "#00e5ff", margin: "0px 55.56px 0px auto" }}>
+          <Grid item align="Right" style={{color: "#00e5ff", margin: "0px 25.56px 0px auto" }}>
             <Typography style={{ fontWeight: 600 }}><Views slug={slug} /> کەس </Typography>
           </Grid>
         </Grid>
