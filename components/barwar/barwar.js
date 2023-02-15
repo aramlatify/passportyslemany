@@ -57,7 +57,7 @@ export const Zhmara = styled.p`
 `;
 export const ContainerDate = styled.div`
 padding-right:20px;
-  padding-left:20px;
+  padding-left:5px;
   align-items: center;
   
   flex-direction: column;
